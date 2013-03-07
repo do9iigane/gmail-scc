@@ -1,0 +1,29 @@
+{
+    "name": "__MSG_appName__",
+    "description": "__MSG_appDesc__",
+    "default_locale": "ja",
+    "version": "0.5",
+    "manifest_version": 2,
+    "page_action": {
+        "default_icon": {
+            "19": "images/layout-sidebar-icon.png",
+            "38": "images/layout-sidebar-icon128c128.png"
+        },
+        "default_title": "Do action"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://mail.google.com/*",
+                "https://mail.google.com/*",
+                "http://*.mail.google.com/*",
+                "https://*.mail.google.com/*"
+            ],
+            "js": [
+                "js/jquery.min.1.8.2.js",
+                "js/gmail_side_bar_size_change.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
