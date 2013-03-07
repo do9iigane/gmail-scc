@@ -2,7 +2,7 @@
     "name": "__MSG_appName__",
     "description": "__MSG_appDesc__",
     "default_locale": "ja",
-    "version": "0.5",
+    "version": "0.6",
     "manifest_version": 2,
     "page_action": {
         "default_icon": {

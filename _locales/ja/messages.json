@@ -1,17 +1,10 @@
 {
   "appName": {
     "message": "gmail-scc",
-    "description": "0.2 メール作成のボタンを幅広にしました。
-0.1 叩き台としてリリース"
+    "description": "sccは(sidebar column change)の意味です。フィルタを階層付けて管理されている人にオススメです。"
   },
   "appDesc": {
-    "message": "sccは(sidebar column change)の意味です。 gmailのサイドバー通常176pxのところ、ちょっと幅広の255pxに変更します。 フィルタを階層付けて管理されている人にオススメです。", 
-    "description":"
-■今後対応したいもの。
--255pxを自由に設定出来る
--ドラッグアンドドロップで自由に可変にする。
-
-■対応は見送っているもの
--labsの機能を有効にしている場合の挙動"
+    "message": "gmailのサイドバー通常176pxのところ、ちょっと幅広の255pxに変更します。", 
+    "description":""
   }
 }
