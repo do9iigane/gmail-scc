@@ -26,6 +26,7 @@ var func2 = function() {
                     //ボタンサイズの横幅を変更
                     $('.T-I.T-I-KE').css('min-width','200px');
                     $('.J-KU-Jg.J-KU-Jg-Zc').css('width','225px');
+                    $('.pt').css('width','205px');
                     change = 'on';
                     return true;
                 }
