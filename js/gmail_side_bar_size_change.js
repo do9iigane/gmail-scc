@@ -1,3 +1,6 @@
+before_H = $(window).height();
+before_W = $(window).width();
+
 (function() {
     setTimeout(function() {
         if (!window.jQuery)
@@ -55,19 +58,33 @@ var main = function() {
 
 //windowの幅が変更された時の処理
 $(window).resize(function() {
-    change = null;
-    $.each($('.nH'), function() {
-        if ($(this).has('style') && $(this).hasClass('nn')) {
-            if ($(this).css('width') === change_width + 'px') {
-                change = 'on';
-                return true;
+    after_H = $(window).height();
+    after_W = $(window).width();
+
+    //checkWindowSize(before_W, before_H, after_W, after_H);
+    
+    if(before_W !==after_W){
+        change = null;
+        $.each($('.nH'), function() {
+            if ($(this).has('style') && $(this).hasClass('nn')) {
+                if ($(this).css('width') === change_width + 'px') {
+                    change = 'on';
+                    return true;
+                }
+                if (change === 'on') {
+                    paddingwidth = $(this).css('width').replace(/px/, '') - (change_width - sidebar_width);
+                    $(this).attr('style', 'width: ' + paddingwidth + 'px;');
+                    $(this).css('width', paddingwidth);
+                    change = null;
+                }
             }
-            if (change === 'on') {
-                paddingwidth = $(this).css('width').replace(/px/, '') - (change_width - sidebar_width);
-                $(this).attr('style', 'width: ' + paddingwidth + 'px;');
-                $(this).css('width', paddingwidth);
-                change = null;
-            }
-        }
-    });
+        });
+    }
 });
+
+function checkWindowSize(bw,bh,aw,ah){
+    if(bw!==aw&&bh!==ah){
+        before_H = $(window).height();
+        before_W = $(window).width();
+    }
+}
